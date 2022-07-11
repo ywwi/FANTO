@@ -1,0 +1,228 @@
+.main h1 {
+  margin-bottom: 1rem;
+}
+#trigger {
+  cursor: pointer;
+}
+.main-buttons {
+  margin-top: 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-buttons > :last-child {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+}
+.cta-button {
+  font-size: clamp(13px, 2vw + 0.6rem, 1rem);
+  background-color: var(--primary-red);
+  padding: 0.8rem clamp(16px, 1.2rem, 24px);
+  border-radius: clamp(36px,4rem,48px);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(36px,4rem,48px);
+  background-color: var(--primary-green);
+  border: 1px solid transparent;
+  transition: transform .6s cubic-bezier(.19,1,.22,1);
+  z-index: -1;
+
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.cta-button:hover::before,
+.cta-button:focus::before {
+  transform: scaleX(1);
+}
+.cta-button span {
+  z-index: 999;
+}
+
+/* section.about {
+} */
+
+.headings > div:first-child {
+  margin-bottom: 1rem;
+}
+.headings > div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.headings > div:last-of-type > .sections-heading {
+  color: var(--primary-green);
+}
+.headings > div:last-of-type > p {
+  text-align: end;
+}
+.sections-heading {
+  margin-bottom: 0.5rem;
+}
+.tape-wrapper {
+  position: relative;
+  margin-left: clamp(-25%, -5% + -12vw, 0%);
+  margin-top: 3rem;
+  width: 300vw;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+.tapes {
+  position: relative;
+}
+.tape {
+  background-color: #181818;
+  width: 120%;
+  position: absolute;
+  right: 0;
+  height: clamp(2.813rem, 4rem + 1vw, 5rem);
+  padding: 0.4rem 0 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tape:first-of-type {
+  top: 0;
+  transform: rotate(clamp(-8deg, -8deg, -4deg));
+}
+.tape:last-of-type {
+  bottom: 0;
+  transform: rotate(clamp(8deg, -8deg, -4deg));
+}
+.tape-line {
+  background-color: var(--primary-green);
+  width: 100%;
+  height: 1px;
+}
+.tape-line-text {
+  display: flex;
+}
+.tape-line-text h4 {
+  font-size: clamp(0.4vw + 1rem, 0.45vw + 1rem, 0.6vw + 1rem);
+  letter-spacing: 1.2px;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+/* 
+section.faq {
+} */
+.fantooo {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  z-index: -2;
+}
+
+.faq > h1:first-child {
+  position: relative;
+  color: var(--secondary-red);
+  font-weight: 700;
+}
+.faq-items {
+  margin-top: 1.4rem;
+}
+.faq-item {
+  border-top: 1px solid white;
+  padding: 1rem 0.6rem 1rem 0;
+  cursor: pointer;
+}
+.faq-item:last-child {
+  border-bottom: 1px solid white;
+}
+.faq-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cross-line {
+  width: 25px;
+  height: 1px;
+  background-color: #cfcfcf;
+  transition: transform 0.4s ease;
+}
+.cross-line:last-child {
+  transform: rotate(-90deg);
+}
+.faq-heading {
+  width: 85%;
+  color: var(--primary-red);
+  font-size: clamp(1.6rem, 2vw + 0.4rem, 4rem);
+  text-transform: uppercase;
+}
+.p-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.p-answer p {
+  margin: 1.375rem 0 1.375rem 0;
+  color: var(--white);
+}
+.p-answer:last-child > a {
+  color: var(--defaultp);
+}
+.faq-item.opened .p-answer {
+  max-height: 410px;
+}
+.faq-item.opened .faq-item-cross > .cross-line:last-child {
+  transform: rotate(0deg);
+}
+
+/* intro */
+.intro-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  z-index: 9999;
+  
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+}
+.intro-wrapper h1 {
+  letter-spacing: 6rem;
+  margin-right: -6rem;
+  position: relative;
+  margin-top: 0.4rem;
+}
+.intro-wrapper div {
+  overflow: hidden;
+}
+:root {
+  --intro-bottom: 0%;
+}
+.intro-wrapper h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: var(--intro-bottom);
+  background-color: var(--black);
+}
